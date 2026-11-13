@@ -1,4 +1,5 @@
 # aicli
+
 Lightweight terminal AI CLI hub with provider failover.
 
 `aicli` gives you one terminal chat interface and routes prompts to installed AI CLIs (Gemini, Codex, OpenCode, Aider, LLM, GitHub Copilot CLI). If one provider hits quota/rate limits, it can switch to another.
@@ -17,29 +18,45 @@ Lightweight terminal AI CLI hub with provider failover.
 ## Install (Arch/Gentoo, no pip required)
 
 ```bash
-git clone <your-repo-url> ~/aicli
+git clone https://github.com/messio-debug/aicli.git ~/aicli
 cd ~/aicli
 chmod +x install-arch.sh
 ./install-arch.sh
-If ~/.local/bin is not in PATH:
-export PATH="$HOME/.local/bin:$PATH"
+```
 
-Run
+If `~/.local/bin` is not in your `PATH`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+## Run
+
+```bash
 aicli
 aicli -p "explain this repo"
 aicli --accounts
+```
 
-Commands
-- /accounts - list/login providers
-- /switch <id|number> - change active provider
-- /permission <project|full> - set permission mode
-- /autoaccept <on|off> - toggle auto-accept
-- /bg <shell command> - run command in background with log file
-- /status - show current config
-- /help, /quit
-Config
-Config file: ~/.config/aicli/config.json  
-Background logs: ~/.local/state/aicli/
+## Commands
 
-Notes
+- `/accounts` - list/login providers
+- `/switch <id|number>` - change active provider
+- `/permission <project|full>` - set permission mode
+- `/autoaccept <on|off>` - toggle auto-accept
+- `/bg <shell command>` - run command in background with log file
+- `/status` - show current config
+- `/help`, `/quit`
+
+## Config
+
+- Config file: `~/.config/aicli/config.json`
+- Background logs: `~/.local/state/aicli/`
+
+## Notes
+
 This does not bypass provider auth or quotas. It orchestrates installed provider CLIs and fails over when limits are detected.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
