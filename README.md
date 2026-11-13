@@ -60,3 +60,7 @@ This does not bypass provider auth or quotas. It orchestrates installed provider
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Extra
+
+If something please let me know if any issues + ( NO RESPONSABILITY IF ANYTHING HEPPENS TO MACHIENE )
